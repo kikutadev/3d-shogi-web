@@ -1,34 +1,34 @@
-# 3D Shogi — Web Playable
+# 3D将棋 — Web Playable
 
-Public WebGL build of the 3D Shogi playable prototype.
+3D将棋の公開WebGLプレイアブル版です。
 
 - Play: https://kikutadev.github.io/3d-shogi-web/
 - Source repository: private
 - Engine: Unity 6000.3.22f1
 
-## Controls
+## 操作
 
-### Desktop
+### PC
 
-- Move: WASD
-- Attack: Left Click
-- Dodge: Space
-- Skill: Shift
-- Nari: F when the yellow gauge is full
-- Camera: fully automatic; there is no manual camera control
+- 移動: WASD
+- 攻撃: 左クリック
+- 回避: Space
+- 特殊: Shift
+- 成り: 黄色の成りゲージが100%のとき F
+- カメラ: 完全自動。手動カメラ操作はありません
 
 ### Mobile Web
 
-Play in landscape orientation.
+横画面でプレイします。
 
-- Move: floating stick on the left
-- Attack: ATTACK
-- Dodge: DODGE
-- Skill: SKILL
-- Nari: NARI when the yellow gauge is full
-- Camera: fully automatic
-- Victory / Defeat: use NEXT STAGE / RETRY on screen
+- 移動: 左側のFloating Stick
+- 攻撃: 「攻撃」
+- 回避: 「回避」
+- 特殊: 「特殊」
+- 成り: 黄色の成りゲージが100%のとき「成り」
+- カメラ: 完全自動
+- 勝敗後: 「次のステージ」「再挑戦」等の画面ボタンで操作
 
-The yellow Nari gauge is directly below HP.
+成りゲージは体力ゲージの直下に黄色で表示します。
 
-This repository intentionally contains only the distributable WebGL build.
+このPublic repositoryには配布用WebGL成果物のみを配置しています。

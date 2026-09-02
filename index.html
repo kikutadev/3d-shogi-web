@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-    <div id="orientation-overlay"><div><strong>ROTATE DEVICE</strong><br>Landscape play only</div></div>
+    <div id="orientation-overlay"><div><strong>端末を横向きにしてください</strong><br>横画面でプレイします</div></div>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
@@ -53,12 +53,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/webgl-walk-attack.loader.js";
+      var loaderUrl = buildUrl + "/webgl-japanese-ui.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/webgl-walk-attack.data",
-        frameworkUrl: buildUrl + "/webgl-walk-attack.framework.js",
-        codeUrl: buildUrl + "/webgl-walk-attack.wasm",
+        dataUrl: buildUrl + "/webgl-japanese-ui.data",
+        frameworkUrl: buildUrl + "/webgl-japanese-ui.framework.js",
+        codeUrl: buildUrl + "/webgl-japanese-ui.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "kikutadev",
         productName: "3D Shogi",
