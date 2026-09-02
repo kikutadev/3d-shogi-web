@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
+    <div id="orientation-overlay"><div><strong>ROTATE DEVICE</strong><br>Landscape play only</div></div>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
@@ -52,12 +53,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/webgl-pages.loader.js";
+      var loaderUrl = buildUrl + "/webgl-build.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/webgl-pages.data",
-        frameworkUrl: buildUrl + "/webgl-pages.framework.js",
-        codeUrl: buildUrl + "/webgl-pages.wasm",
+        dataUrl: buildUrl + "/webgl-build.data",
+        frameworkUrl: buildUrl + "/webgl-build.framework.js",
+        codeUrl: buildUrl + "/webgl-build.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "kikutadev",
         productName: "3D Shogi",
@@ -99,7 +100,7 @@
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
+        config.devicePixelRatio = 1;
 
 
       } else {
