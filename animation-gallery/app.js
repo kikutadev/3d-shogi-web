@@ -11,7 +11,8 @@ const pieces=[
 const g=document.querySelector('#gallery');
 for(const [id,jp,en,note] of pieces){
   const el=document.createElement('article');el.className='card';
-  el.innerHTML=`<div class="media"><video muted loop autoplay playsinline preload="metadata" poster="media/${id}.jpg"><source src="media/${id}.mp4" type="video/mp4"></video><span class="badge">5 sec loop</span><button class="cardPlay" aria-label="再生/一時停止">Ⅱ</button></div><div class="info"><div><div class="jp">${jp}</div><div class="name">${en}</div></div><div class="note">${note}</div></div>`;
+  const duration=id==='king-special'?'5 sec':'8 sec';
+  el.innerHTML=`<div class="media"><video muted loop autoplay playsinline preload="metadata" poster="media/${id}.jpg"><source src="media/${id}.mp4" type="video/mp4"></video><span class="badge">${duration} loop</span><button class="cardPlay" aria-label="再生/一時停止">Ⅱ</button></div><div class="info"><div><div class="jp">${jp}</div><div class="name">${en}</div></div><div class="note">${note}</div></div>`;
   g.appendChild(el);
 }
 let playing=true;
