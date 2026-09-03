@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3D将棋 — Animation Gallery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div><p class="eyebrow">3D SHOGI / MOTION REVIEW</p><h1>Animation Gallery</h1>
+  <p class="lede">ゲーム本体とは独立した、駒モデルのモーション確認用ギャラリーです。現在は <b>Idle → Move → Anticipation → Recovery</b> の基礎ループを掲載しています。</p></div>
+  <button id="toggleAll">一時停止</button>
+</header>
+<main>
+<section class="legend"><span><i></i> Idle</span><span><i></i> Move</span><span><i></i> Anticipation</span><span><i></i> Recovery</span></section>
+<section class="grid" id="gallery"></section>
+</main>
+<footer>Blender motion preview / Gameplay Scene・Prefabとは分離</footer>
+<script src="app.js"></script>
+</body></html>

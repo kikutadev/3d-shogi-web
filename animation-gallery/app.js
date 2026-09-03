@@ -1,0 +1,5 @@
+const pieces=[
+['gold','金','Gold General','重い構え / 武器を引く'],['silver','銀','Silver General','槍の構え / 前傾'],['knight','桂','Knight','沈み込み / 跳躍準備'],['lance','香','Lance','槍を引く / 車体を沈める'],['bishop','角','Bishop','水平X / フィン収束'],['rook','飛','Rook','砲口・スラスター溜め'],['king','王','King','上体・杖を引く / Boss構え']];
+const g=document.querySelector('#gallery');
+for(const [id,jp,en,note] of pieces){const el=document.createElement('article');el.className='card';el.innerHTML=`<div class="media"><video muted loop autoplay playsinline preload="metadata" poster="media/${id}.jpg"><source src="media/${id}.mp4" type="video/mp4"></video><span class="badge">3.0 sec loop</span></div><div class="timeline"></div><div class="info"><div><div class="jp">${jp}</div><div class="name">${en}</div></div><div class="note">${note}<br>Idle / Move / Anticipation</div></div>`;g.appendChild(el)}
+let playing=true;document.querySelector('#toggleAll').onclick=async e=>{playing=!playing;document.body.classList.toggle('paused',!playing);for(const v of document.querySelectorAll('video')){if(playing){try{await v.play()}catch{}}else v.pause()}e.currentTarget.textContent=playing?'一時停止':'すべて再生'};
