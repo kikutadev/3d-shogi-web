@@ -24,8 +24,60 @@ html, body {
   -webkit-user-select: none;
   user-select: none;
 }
+#unity-container.unity-desktop {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+}
+#unity-container.unity-desktop #unity-canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+#unity-container.unity-desktop #unity-footer {
+  display: none;
+}
 #unity-canvas {
   touch-action: none;
+  background: #e7dfcf;
+}
+body {
+  background: #e7dfcf;
+}
+#unity-loading-bar {
+  width: min(420px, 72vw);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+#unity-logo {
+  display: none !important;
+}
+#shogi-loading-mark {
+  margin-bottom: 10px;
+  color: #16130f;
+  font: 500 clamp(36px, 5vw, 62px)/1.15 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', serif;
+  letter-spacing: .04em;
+}
+#shogi-loading-copy {
+  margin-bottom: 22px;
+  color: rgba(35, 29, 22, .62);
+  font: 500 14px/1.5 -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+  letter-spacing: .08em;
+}
+#unity-progress-bar-empty {
+  width: 100%;
+  height: 4px;
+  margin: 0;
+  background: rgba(45, 35, 25, .14);
+  border: 0;
+}
+#unity-progress-bar-full {
+  height: 4px;
+  margin: 0;
+  background: #a31f16;
 }
 #orientation-overlay {
   display: none;
@@ -36,10 +88,29 @@ html, body {
   justify-content: center;
   box-sizing: border-box;
   padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
-  background: #171717;
-  color: #ffffff;
+  background: #e7dfcf;
+  color: #16130f;
   text-align: center;
-  font: 600 18px/1.6 -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.orientation-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+}
+.orientation-card strong {
+  font-size: 26px;
+  font-weight: 600;
+}
+.orientation-card span {
+  width: 92px;
+  height: 4px;
+  margin: 14px 0 12px;
+  background: #a31f16;
+}
+.orientation-card small {
+  color: rgba(35, 29, 22, .62);
+  font: 500 13px/1.5 -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
 }
 @media (orientation: portrait) and (max-width: 900px) {
   #orientation-overlay { display: flex; }

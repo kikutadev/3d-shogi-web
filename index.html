@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#e7dfcf">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | 3D Shogi</title>
+    <title>3D将棋</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-    <div id="orientation-overlay"><div><strong>端末を横向きにしてください</strong><br>横画面でプレイします</div></div>
+    <div id="orientation-overlay"><div class="orientation-card"><strong>横向きにしてください</strong><span></span><small>盤面を広く使って遊びます</small></div></div>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
+        <div id="shogi-loading-mark">3D将棋</div><div id="shogi-loading-copy">盤を整えています</div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
@@ -53,12 +55,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/webgl-hud-polish.loader.js";
+      var loaderUrl = buildUrl + "/webgl-build.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/webgl-hud-polish.data",
-        frameworkUrl: buildUrl + "/webgl-hud-polish.framework.js",
-        codeUrl: buildUrl + "/webgl-hud-polish.wasm",
+        dataUrl: buildUrl + "/webgl-build.data",
+        frameworkUrl: buildUrl + "/webgl-build.framework.js",
+        codeUrl: buildUrl + "/webgl-build.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "kikutadev",
         productName: "3D Shogi",
@@ -105,8 +107,8 @@
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
