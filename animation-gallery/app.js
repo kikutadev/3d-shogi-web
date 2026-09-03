@@ -1,4 +1,5 @@
 const pieces=[
+  ['pawn','歩','Pawn / Soldier','現在の歩兵。槍の通常攻撃から「と」への大振り攻撃まで'],
   ['gold','金','Gold General','低く踏み込み、短く重い横打ち'],
   ['silver','銀','Silver General','身体を絞って一直線に鋭く突く'],
   ['knight','桂','Knight','深く沈み、跳躍して前脚から着地'],
@@ -11,7 +12,7 @@ const pieces=[
 const g=document.querySelector('#gallery');
 for(const [id,jp,en,note] of pieces){
   const el=document.createElement('article');el.className='card';
-  const duration=id==='king-special'?'5 sec':'8 sec';
+  const duration=id==='king-special'?'5 sec':id==='pawn'?'3.1 sec':'8 sec';
   el.innerHTML=`<div class="media"><video muted loop autoplay playsinline preload="metadata" poster="media/${id}.jpg"><source src="media/${id}.mp4" type="video/mp4"></video><span class="badge">${duration} loop</span><button class="cardPlay" aria-label="再生/一時停止">Ⅱ</button></div><div class="info"><div><div class="jp">${jp}</div><div class="name">${en}</div></div><div class="note">${note}</div></div>`;
   g.appendChild(el);
 }
