@@ -1,4 +1,4 @@
-const mediaRevision = '20260905-gold-fc2cc88';
+const mediaRevision = '20260905-king-123e852';
 const pieces = [
   {
     "id": "pawn-idle",
