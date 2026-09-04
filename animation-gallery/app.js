@@ -1,4 +1,4 @@
-const mediaRevision = '20260905-knight-9db2456';
+const mediaRevision = '20260905-lance-polish';
 const pieces = [
   {
     "id": "pawn-idle",
@@ -403,7 +403,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Gallery / Defeated",
-    "note": "撃破時の倒れ・沈み込み",
+    "note": "車体が横転して停止",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -413,7 +413,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Gallery / Revive",
-    "note": "撃破状態からの立ち上がり・再起動",
+    "note": "横転状態から二段階で起き上がる",
     "duration": "1.1 sec",
     "vfx": []
   },
