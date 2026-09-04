@@ -207,7 +207,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Gallery / Hit",
-    "note": "被弾時の短いリアクション",
+    "note": "低く沈み杖を寄せて踏ん張る重い被弾",
     "duration": "0.5 sec",
     "vfx": []
   },
@@ -269,7 +269,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Gallery / Hit",
-    "note": "被弾時の短いリアクション",
+    "note": "頭と槍腕が鋭く外へ流れる軽快な被弾",
     "duration": "0.5 sec",
     "vfx": []
   },
@@ -341,7 +341,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Gallery / Defeated",
-    "note": "撃破時の倒れ・沈み込み",
+    "note": "馬体が横へ倒れ込む撃破モーション",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -351,7 +351,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Gallery / Revive",
-    "note": "撃破状態からの立ち上がり・再起動",
+    "note": "横倒れから四脚を戻して立ち上がる",
     "duration": "1.1 sec",
     "vfx": []
   },
@@ -384,7 +384,8 @@ const pieces = [
     "note": "逆転プリロードから一直線に突進",
     "duration": "2.3 sec",
     "vfx": [
-      "CHARGE IMPACT"
+      "CHARGE IMPACT",
+      "SPEAR STREAK"
     ]
   },
   {
@@ -466,7 +467,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Gallery / Defeated",
-    "note": "撃破時の倒れ・沈み込み",
+    "note": "4Finを畳みX構造を崩して機能停止",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -476,7 +477,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Gallery / Revive",
-    "note": "撃破状態からの立ち上がり・再起動",
+    "note": "対角ペアを順に展開してXを再構成",
     "duration": "1.1 sec",
     "vfx": []
   },
@@ -528,7 +529,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Gallery / Defeated",
-    "note": "撃破時の倒れ・沈み込み",
+    "note": "推力を失い片側へ傾いて機首が沈む",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -538,7 +539,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Gallery / Revive",
-    "note": "撃破状態からの立ち上がり・再起動",
+    "note": "低い側のスラスターから再点火して水平復帰",
     "duration": "1.1 sec",
     "vfx": []
   },
@@ -580,7 +581,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Gallery / Hit",
-    "note": "被弾時の短いリアクション",
+    "note": "杖で踏ん張り、遅れてマントが揺れる被弾",
     "duration": "0.5 sec",
     "vfx": []
   },
