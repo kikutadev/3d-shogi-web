@@ -446,7 +446,8 @@ const pieces = [
     "note": "X形を収束して対角線へ放出",
     "duration": "2.3 sec",
     "vfx": [
-      "DIAGONAL BURST"
+      "DIAGONAL BURST",
+      "CORE BURST"
     ]
   },
   {
