@@ -1,4 +1,4 @@
-const mediaRevision = '20260905-lance-polish';
+const mediaRevision = '20260905-rook-3079d24';
 const pieces = [
   {
     "id": "pawn-idle",
