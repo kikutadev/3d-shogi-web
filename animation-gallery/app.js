@@ -1,5 +1,16 @@
-const mediaRevision = '20260905-model-rebuild-gsk-v1';
+const mediaRevision = '20260905-turntables-v1';
 const pieces = [
+  {
+    "id": "pawn-turntable",
+    "piece": "歩",
+    "group": "基本",
+    "jp": "360°回転",
+    "state": "Model / Turntable",
+    "note": "モデル全周を一定速度で確認する360°ターンテーブル",
+    "duration": "6.0 sec",
+    "vfx": [],
+    "modelReview": true
+  },
   {
     "id": "pawn-idle",
     "piece": "歩",
@@ -170,6 +181,17 @@ const pieces = [
     ]
   },
   {
+    "id": "gold-turntable",
+    "piece": "金",
+    "group": "基本",
+    "jp": "360°回転",
+    "state": "Model / Turntable",
+    "note": "モデル全周を一定速度で確認する360°ターンテーブル",
+    "duration": "6.0 sec",
+    "vfx": [],
+    "modelReview": true
+  },
+  {
     "id": "gold-idle",
     "piece": "金",
     "group": "基本",
@@ -230,6 +252,17 @@ const pieces = [
     "note": "撃破状態からの立ち上がり・再起動",
     "duration": "1.1 sec",
     "vfx": []
+  },
+  {
+    "id": "silver-turntable",
+    "piece": "銀",
+    "group": "基本",
+    "jp": "360°回転",
+    "state": "Model / Turntable",
+    "note": "モデル全周を一定速度で確認する360°ターンテーブル",
+    "duration": "6.0 sec",
+    "vfx": [],
+    "modelReview": true
   },
   {
     "id": "silver-idle",
@@ -294,6 +327,17 @@ const pieces = [
     "vfx": []
   },
   {
+    "id": "knight-turntable",
+    "piece": "桂",
+    "group": "基本",
+    "jp": "360°回転",
+    "state": "Model / Turntable",
+    "note": "モデル全周を一定速度で確認する360°ターンテーブル",
+    "duration": "6.0 sec",
+    "vfx": [],
+    "modelReview": true
+  },
+  {
     "id": "knight-idle",
     "piece": "桂",
     "group": "基本",
@@ -354,6 +398,17 @@ const pieces = [
     "note": "横倒れから四脚を戻して立ち上がる",
     "duration": "1.1 sec",
     "vfx": []
+  },
+  {
+    "id": "lance-turntable",
+    "piece": "香",
+    "group": "基本",
+    "jp": "360°回転",
+    "state": "Model / Turntable",
+    "note": "モデル全周を一定速度で確認する360°ターンテーブル",
+    "duration": "6.0 sec",
+    "vfx": [],
+    "modelReview": true
   },
   {
     "id": "lance-idle",
@@ -419,6 +474,17 @@ const pieces = [
     "vfx": []
   },
   {
+    "id": "bishop-turntable",
+    "piece": "角",
+    "group": "基本",
+    "jp": "360°回転",
+    "state": "Model / Turntable",
+    "note": "モデル全周を一定速度で確認する360°ターンテーブル",
+    "duration": "6.0 sec",
+    "vfx": [],
+    "modelReview": true
+  },
+  {
     "id": "bishop-idle",
     "piece": "角",
     "group": "基本",
@@ -482,6 +548,17 @@ const pieces = [
     "vfx": []
   },
   {
+    "id": "rook-turntable",
+    "piece": "飛",
+    "group": "基本",
+    "jp": "360°回転",
+    "state": "Model / Turntable",
+    "note": "モデル全周を一定速度で確認する360°ターンテーブル",
+    "duration": "6.0 sec",
+    "vfx": [],
+    "modelReview": true
+  },
+  {
     "id": "rook-idle",
     "piece": "飛",
     "group": "基本",
@@ -542,6 +619,17 @@ const pieces = [
     "note": "低い側のスラスターから再点火して水平復帰",
     "duration": "1.1 sec",
     "vfx": []
+  },
+  {
+    "id": "king-turntable",
+    "piece": "王",
+    "group": "基本",
+    "jp": "360°回転",
+    "state": "Model / Turntable",
+    "note": "モデル全周を一定速度で確認する360°ターンテーブル",
+    "duration": "6.0 sec",
+    "vfx": [],
+    "modelReview": true
   },
   {
     "id": "king-idle",
@@ -621,15 +709,16 @@ const pieces = [
 ];
 
 const vfxCount = pieces.filter(x => x.vfx.length).length;
-const motionOnlyCount = pieces.length - vfxCount;
+const modelReviewCount = pieces.filter(x => x.modelReview).length;
+const motionOnlyCount = pieces.length - vfxCount - modelReviewCount;
 document.querySelector('#coverage').innerHTML = `
-  <div class="coverageItem"><strong>${pieces.length}</strong><span>表示アニメーション</span></div>
+  <div class="coverageItem"><strong>${pieces.length}</strong><span>表示動画</span></div>
   <div class="coverageItem"><strong>${vfxCount}</strong><span>VFX付き動作</span></div>
-  <div class="coverageItem"><strong>${motionOnlyCount}</strong><span>Motion only</span></div>
-  <p>歩兵はUnity Animator Stateを全15件。その他7駒は既存Blenderシーケンスを Idle / Move / Attack / Hit / Defeated / Revive に分割し、王のRoyal Slamも独立表示しています。</p>`;
+  <div class="coverageItem"><strong>${modelReviewCount}</strong><span>360°モデル確認</span></div>
+  <p>現行8駒すべてに360°ターンテーブルを追加。歩兵はUnity Animator State全15件、その他7駒は既存Blenderシーケンスを分割表示し、VFXなしの通常動作は${motionOnlyCount}件です。</p>`;
 const groups = ['すべて','基本','移動','攻撃','リアクション','特殊'];
 const filters = document.querySelector('#filters'); let activeGroup='すべて';
 for(const group of groups){const b=document.createElement('button');b.textContent=group;b.className=group===activeGroup?'active':'';b.onclick=()=>{activeGroup=group;[...filters.children].forEach(x=>x.classList.toggle('active',x===b));render()};filters.appendChild(b)}
 const pieceOrder=['歩兵','金','銀','桂','香','角','飛','王']; const root=document.querySelector('#gallery'); let playing=true; let speed=1;
-function render(){root.innerHTML='';const shown=activeGroup==='すべて'?pieces:pieces.filter(x=>x.group===activeGroup);const keyOf=x=>x.id.startsWith('pawn-')?'歩兵':x.piece;const grouped=shown.reduce((a,x)=>{const k=keyOf(x);(a[k]??=[]).push(x);return a},{});for(const piece of pieceOrder){const entries=grouped[piece];if(!entries?.length)continue;const section=document.createElement('section');section.className='pieceSection';const kanji=piece==='歩兵'?'歩':piece;const total=piece==='歩兵'?15:piece==='王'?7:6;section.innerHTML=`<div class="sectionHeading"><div><span class="pieceKanji">${kanji}</span><h2>${piece} — ${entries.length}アニメーション</h2></div><span>${entries.length} / ${total}</span></div><div class="grid"></div>`;const grid=section.querySelector('.grid');for(const item of entries){const tags=item.vfx.length?item.vfx.map(v=>`<span class="vfxTag">VFX · ${v}</span>`).join(''):'<span class="motionTag">MOTION ONLY</span>';const card=document.createElement('article');card.className='card';card.innerHTML=`<div class="media"><video muted loop autoplay playsinline preload="metadata" poster="media/${item.id}.jpg?v=${mediaRevision}"><source src="media/${item.id}.mp4?v=${mediaRevision}" type="video/mp4"></video><span class="duration">${item.duration}</span><button class="cardPlay" aria-label="再生/一時停止">Ⅱ</button></div><div class="info"><div class="titleRow"><div><div class="jp">${item.piece}・${item.jp}</div><div class="groupLabel">${item.group}</div></div><div class="tags">${tags}</div></div><div class="state"><span>STATE</span><code>${item.state}</code></div><p>${item.note}</p></div>`;const video=card.querySelector('video'),btn=card.querySelector('.cardPlay');video.playbackRate=speed;if(!playing)video.pause();btn.onclick=()=>{if(video.paused){video.play();btn.textContent='Ⅱ'}else{video.pause();btn.textContent='▶'}};grid.appendChild(card)}root.appendChild(section)}}
+function render(){root.innerHTML='';const shown=activeGroup==='すべて'?pieces:pieces.filter(x=>x.group===activeGroup);const keyOf=x=>x.id.startsWith('pawn-')?'歩兵':x.piece;const grouped=shown.reduce((a,x)=>{const k=keyOf(x);(a[k]??=[]).push(x);return a},{});for(const piece of pieceOrder){const entries=grouped[piece];if(!entries?.length)continue;const section=document.createElement('section');section.className='pieceSection';const kanji=piece==='歩兵'?'歩':piece;const total=pieces.filter(x=>keyOf(x)===piece).length;section.innerHTML=`<div class="sectionHeading"><div><span class="pieceKanji">${kanji}</span><h2>${piece} — ${entries.length}アニメーション</h2></div><span>${entries.length} / ${total}</span></div><div class="grid"></div>`;const grid=section.querySelector('.grid');for(const item of entries){const tags=item.modelReview?'<span class="motionTag">MODEL 360°</span>':item.vfx.length?item.vfx.map(v=>`<span class="vfxTag">VFX · ${v}</span>`).join(''):'<span class="motionTag">MOTION ONLY</span>';const card=document.createElement('article');card.className='card';card.innerHTML=`<div class="media"><video muted loop autoplay playsinline preload="metadata" poster="media/${item.id}.jpg?v=${mediaRevision}"><source src="media/${item.id}.mp4?v=${mediaRevision}" type="video/mp4"></video><span class="duration">${item.duration}</span><button class="cardPlay" aria-label="再生/一時停止">Ⅱ</button></div><div class="info"><div class="titleRow"><div><div class="jp">${item.piece}・${item.jp}</div><div class="groupLabel">${item.group}</div></div><div class="tags">${tags}</div></div><div class="state"><span>STATE</span><code>${item.state}</code></div><p>${item.note}</p></div>`;const video=card.querySelector('video'),btn=card.querySelector('.cardPlay');video.playbackRate=speed;if(!playing)video.pause();btn.onclick=()=>{if(video.paused){video.play();btn.textContent='Ⅱ'}else{video.pause();btn.textContent='▶'}};grid.appendChild(card)}root.appendChild(section)}}
 render(); function videos(){return [...document.querySelectorAll('video')]} function setPlaying(next){playing=next;for(const v of videos()){if(playing){v.play().catch(()=>{})}else v.pause()}document.querySelector('#toggleAll').textContent=playing?'一時停止':'すべて再生'} document.querySelector('#toggleAll').onclick=()=>setPlaying(!playing); document.querySelectorAll('[data-speed]').forEach(b=>b.onclick=()=>{speed=Number(b.dataset.speed);videos().forEach(v=>v.playbackRate=speed);document.querySelectorAll('[data-speed]').forEach(x=>x.classList.toggle('active',x===b))});
