@@ -1,4 +1,4 @@
-const mediaRevision = '20260905-gold-footwork-v1';
+const mediaRevision = '20260906-silver-katana-v1';
 const pieces = [
   {
     "id": "pawn-turntable",
@@ -270,7 +270,7 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Gallery / Idle",
-    "note": "前傾を保ち、槍先を静かに整える警戒姿勢",
+    "note": "刀を身体の近くで立て、前傾を保つ警戒姿勢",
     "duration": "1.2 sec",
     "vfx": []
   },
@@ -280,7 +280,7 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Gallery / Move",
-    "note": "支持脚と遊脚を交互に切り替え、膝と足首を使う軽快な戦闘歩法",
+    "note": "支持脚と遊脚を交互に切り替え、刀を身体の近くで制御した軽快な戦闘歩法",
     "duration": "1.0 sec",
     "vfx": []
   },
@@ -290,11 +290,11 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Gallery / Attack",
-    "note": "後脚を深く畳み、前脚を着いて反対斜めへ身体ごと踏み込む高速突き",
+    "note": "後脚へ荷重して刀を上段寄りに起こし、前脚を着いて斜め下へ振り下ろし、外側へ抜く踏み込み斬り",
     "duration": "2.3 sec",
     "vfx": [
-      "DIAGONAL FEINT",
-      "DIAGONAL THRUST"
+      "KATANA SLASH",
+      "CUT IMPACT"
     ]
   },
   {
@@ -303,7 +303,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Gallery / Hit",
-    "note": "片足で衝撃を逃がしながら頭と槍腕が外へ流れ、すぐ構えへ戻る被弾",
+    "note": "片足で衝撃を逃がしながら頭と刀腕が外へ流れ、すぐ構えへ戻る被弾",
     "duration": "0.5 sec",
     "vfx": []
   },
@@ -313,7 +313,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Gallery / Defeated",
-    "note": "支持脚が崩れ、両脚が絡みながら槍を外へ逃がして横倒れする",
+    "note": "支持脚が崩れ、両脚が絡みながら刀を身体の外へ逃がして横倒れする",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -323,7 +323,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Gallery / Revive",
-    "note": "片足を着き、槍側を支点に身体を起こして素早く構えへ戻る",
+    "note": "片足を着いて身体を起こし、刀を制御したまま素早く構えへ戻る",
     "duration": "1.1 sec",
     "vfx": []
   },
