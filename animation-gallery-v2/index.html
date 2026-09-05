@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#eee8dc"><meta name="description" content="小さな木彫りの武者たちが、墨と朱の軌跡を描く。3D将棋・アニメーションギャラリー v2。"><title>一筆、躍る。｜3D将棋 Animation Gallery v2</title>  <script type="module" crossorigin src="./assets/index-BMnuLKrK.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D16EnJ7b.css">
+</head>
+<body>
+<header><a class="brand" href="./"><span class="seal">将</span><span>3D SHOGI<span class="brand-sub">小さな武者の、演武帖。</span></span></a><div class="edition">ANIMATION GALLERY <b>v2</b><span>九つの駒、九つの筆致。</span></div></header>
+<main>
+<div class="intro"><div><span class="eyebrow">MINIATURES IN MOTION</span><h1>一筆、<em>躍る。</em></h1></div><p>ころんとした造形に、凛とした一撃。<br>駒を選んで、墨の余韻までお楽しみください。</p><span class="intro-note">造形・演武　第二帖<span>〇九体 / 七つの所作</span></span></div>
+<section class="exhibition" aria-label="立体アニメーションビューア">
+  <div class="stage" id="stage"><canvas id="canvas" aria-label="駒の3D表示。ドラッグで回転、スクロールで拡大できます。"></canvas><div class="stage-top"><span id="stage-label">壱 / 歩兵</span><span class="live-mark"><i></i> LIVE 3D</span></div><div id="loading" role="status">武者を迎えています…</div><div class="stage-bottom"><span>ドラッグで回転 · スクロールで拡大</span><button id="reset-view" title="正面の視点に戻す">視点を戻す ↗</button></div><div class="watermark" aria-hidden="true">演武</div></div>
+  <aside><div class="piece-meta"><span id="piece-order">壱 / 09</span><span id="piece-role">まっすぐな、小さな勇気</span></div><div class="piece-heading"><span id="piece-glyph">歩</span><div><h2 id="piece-name">歩兵</h2><p id="piece-en">THE LITTLE VANGUARD</p></div></div><div class="divider"></div><span class="eyebrow">本日の演目</span><h3 id="move-name">一文字</h3><p id="piece-description"></p><div class="motion-select" id="motions" aria-label="モーション"></div><div class="options"><label><input id="ink" type="checkbox" checked><span>墨の軌跡</span></label><label><input id="rotate" type="checkbox"><span>ゆっくり回転</span></label></div><a id="download" class="download" href="./models/pawn.glb" download>立体モデルを持ち帰る <span>GLB ↓</span></a></aside>
+</section>
+<div class="transport"><button id="play" class="play" aria-label="一時停止">Ⅱ</button><button id="replay" aria-label="最初から再生">↺</button><span id="motion-label">大技</span><input id="timeline" aria-label="再生位置" type="range" min="0" max="1000" value="0"><span id="time">0.0 / 3.0 s</span><select id="speed" aria-label="再生速度"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option></select></div>
+<nav class="collection" id="pieces" aria-label="駒を選ぶ"></nav>
+<footer><p><span class="footer-seal">墨</span> 木のぬくもり。漆の艶。筆の勢い。</p><a href="../animation-gallery/">第一帖を見る ↗</a><details><summary>このギャラリーについて</summary><p>Blenderで造形・関節・全7所作・立体の筆跡を制作した9種のミニチュアです。GLBは同じBlenderシーンから書き出しています。演武を鑑賞するギャラリーとして制作しており、ゲーム本編への組み込みは別工程です。</p></details></footer>
+</main>
+</body></html>
