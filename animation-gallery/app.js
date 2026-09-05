@@ -1,4 +1,4 @@
-const mediaRevision = '20260905-silver-footwork-v3';
+const mediaRevision = '20260905-gold-footwork-v1';
 const pieces = [
   {
     "id": "pawn-turntable",
@@ -197,7 +197,7 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Gallery / Idle",
-    "note": "静止時の呼吸・浮遊・姿勢保持",
+    "note": "両足を接地したまま膝を緩め、重心を静かに移す重装待機",
     "duration": "1.2 sec",
     "vfx": []
   },
@@ -207,7 +207,7 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Gallery / Move",
-    "note": "各駒固有の移動サンプル",
+    "note": "短い歩幅で支持脚を切り替え、着地ごとに沈む重い足運び",
     "duration": "1.0 sec",
     "vfx": []
   },
@@ -217,7 +217,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Gallery / Attack",
-    "note": "短く重い横打ち",
+    "note": "後脚で溜め、前脚を着いて全身で押し込む重い杖打撃",
     "duration": "2.3 sec",
     "vfx": [
       "HEAVY BASH"
@@ -229,7 +229,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Gallery / Hit",
-    "note": "低く沈み杖を寄せて踏ん張る重い被弾",
+    "note": "両膝を潰して衝撃を受け、足元で踏ん張って戻る被弾",
     "duration": "0.5 sec",
     "vfx": []
   },
@@ -239,7 +239,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Gallery / Defeated",
-    "note": "撃破時の倒れ・沈み込み",
+    "note": "一度耐えてから片膝が抜け、重く横へ崩れ落ちる",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -249,7 +249,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Gallery / Revive",
-    "note": "撃破状態からの立ち上がり・再起動",
+    "note": "片膝を立て、杖側で支えながら踏ん張って起き上がる",
     "duration": "1.1 sec",
     "vfx": []
   },
