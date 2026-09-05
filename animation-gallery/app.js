@@ -1,4 +1,4 @@
-const mediaRevision = '20260905-turntables-v1';
+const mediaRevision = '20260905-silver-motion-v2';
 const pieces = [
   {
     "id": "pawn-turntable",
@@ -270,7 +270,7 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Gallery / Idle",
-    "note": "静止時の呼吸・浮遊・姿勢保持",
+    "note": "前傾を保ち、槍先を静かに整える警戒姿勢",
     "duration": "1.2 sec",
     "vfx": []
   },
@@ -280,7 +280,7 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Gallery / Move",
-    "note": "各駒固有の移動サンプル",
+    "note": "左右斜めへ素早く重心を切り替える軽快な足運び",
     "duration": "1.0 sec",
     "vfx": []
   },
@@ -290,9 +290,10 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Gallery / Attack",
-    "note": "身体を絞った鋭い前方突き",
+    "note": "右へ溜め、反対斜めへ身体ごと踏み込む高速突き",
     "duration": "2.3 sec",
     "vfx": [
+      "DIAGONAL FEINT",
       "DIAGONAL THRUST"
     ]
   },
@@ -302,7 +303,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Gallery / Hit",
-    "note": "頭と槍腕が鋭く外へ流れる軽快な被弾",
+    "note": "頭と槍腕が鋭く外へ流れ、すぐ構えへ戻る被弾",
     "duration": "0.5 sec",
     "vfx": []
   },
@@ -312,7 +313,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Gallery / Defeated",
-    "note": "撃破時の倒れ・沈み込み",
+    "note": "横へ崩れながら槍を外へ逃がして倒れ込む",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -322,7 +323,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Gallery / Revive",
-    "note": "撃破状態からの立ち上がり・再起動",
+    "note": "槍側を支点に身体を起こし、素早く構えへ戻る",
     "duration": "1.1 sec",
     "vfx": []
   },
