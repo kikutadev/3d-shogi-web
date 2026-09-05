@@ -1,4 +1,4 @@
-const mediaRevision = '20260906-silver-katana-v1';
+const mediaRevision = '20260906-silver-katana-v2';
 const pieces = [
   {
     "id": "pawn-turntable",
