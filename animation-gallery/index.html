@@ -3,27 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>3D将棋 — Animation & VFX Gallery</title>
-<link rel="stylesheet" href="style.css">
+<title>3D将棋 — Animation Gallery</title>
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
-<header class="hero">
-  <div>
-    <p class="eyebrow">3D SHOGI / ANIMATION + VFX REVIEW</p>
-    <h1>Animation Gallery</h1>
-    <p class="lede">駒ごとのアニメーションとゲーム内エフェクトを同じ場所で確認するレビューギャラリーです。全駒の現行アニメーションを個別カードで表示しています。歩兵は <b>Animator State 15件を全件表示</b>。その他7駒も既存シーケンスを <b>Idle / Move / Attack / Hit / Defeated / Revive</b> に分割し、VFXの有無も明示しています。</p>
-  </div>
-  <div class="controls">
-    <a href="../animation-gallery-v2/" style="color:inherit;padding:10px 14px;border:1px solid currentColor;border-radius:6px;text-decoration:none">新作・アニメーションギャラリー v2 ↗</a>
-    <div class="speeds" aria-label="再生速度"><button data-speed="0.25">0.25×</button><button data-speed="0.5">0.5×</button><button data-speed="1" class="active">1×</button></div>
-    <button id="toggleAll">一時停止</button>
-  </div>
-</header>
+<header class="hero"><div>
+  <p class="eyebrow">3D SHOGI / ANIMATION + VFX REVIEW</p>
+  <h1>Animation Gallery</h1>
+  <p class="lede">通信量を抑えるため、駒ごとにページを分けています。ここでは動画を読み込まず、選んだ駒のページだけで必要なアニメーションを読み込みます。</p>
+</div></header>
 <main>
-  <section class="coverage" id="coverage"></section>
-  <nav class="filters" id="filters" aria-label="表示フィルタ"></nav>
-  <div id="gallery"></div>
+  <nav class="pieceLinks" aria-label="駒を選択">
+    <a class="pieceLink" href="pawn/"><span class="pieceKanji">歩</span><strong>歩兵</strong></a>
+    <a class="pieceLink" href="gold/"><span class="pieceKanji">金</span><strong>金</strong></a>
+    <a class="pieceLink" href="silver/"><span class="pieceKanji">銀</span><strong>銀</strong></a>
+    <a class="pieceLink" href="knight/"><span class="pieceKanji">桂</span><strong>桂</strong></a>
+    <a class="pieceLink" href="lance/"><span class="pieceKanji">香</span><strong>香</strong></a>
+    <a class="pieceLink" href="bishop/"><span class="pieceKanji">角</span><strong>角</strong></a>
+    <a class="pieceLink" href="rook/"><span class="pieceKanji">飛</span><strong>飛</strong></a>
+    <a class="pieceLink" href="king/"><span class="pieceKanji">王</span><strong>王</strong></a>
+  </nav>
 </main>
 <footer>Animation state + Presentation VFX review / Gameplay logicとは分離</footer>
-<script src="app.js?v=58"></script>
 </body></html>

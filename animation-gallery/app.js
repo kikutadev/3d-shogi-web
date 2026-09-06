@@ -709,17 +709,79 @@ const pieces = [
   }
 ];
 
-const vfxCount = pieces.filter(x => x.vfx.length).length;
-const modelReviewCount = pieces.filter(x => x.modelReview).length;
-const motionOnlyCount = pieces.length - vfxCount - modelReviewCount;
+const pieceRoutes = {
+  pawn:   { key: '歩兵', kanji: '歩', label: '歩兵' },
+  gold:   { key: '金',   kanji: '金', label: '金' },
+  silver: { key: '銀',   kanji: '銀', label: '銀' },
+  knight: { key: '桂',   kanji: '桂', label: '桂' },
+  lance:  { key: '香',   kanji: '香', label: '香' },
+  bishop: { key: '角',   kanji: '角', label: '角' },
+  rook:   { key: '飛',   kanji: '飛', label: '飛' },
+  king:   { key: '王',   kanji: '王', label: '王' },
+};
+const keyOf = item => item.id.startsWith('pawn-') || item.id.startsWith('to-') ? '歩兵' : item.piece;
+const route = pieceRoutes[document.body.dataset.piece];
+if (!route) throw new Error('Animation Gallery piece page requires data-piece.');
+const pagePieces = pieces.filter(item => keyOf(item) === route.key);
+const mediaBase = document.body.dataset.mediaBase || '../media/';
+
+const vfxCount = pagePieces.filter(x => x.vfx.length).length;
+const modelReviewCount = pagePieces.filter(x => x.modelReview).length;
+const motionOnlyCount = pagePieces.length - vfxCount - modelReviewCount;
 document.querySelector('#coverage').innerHTML = `
-  <div class="coverageItem"><strong>${pieces.length}</strong><span>表示動画</span></div>
+  <div class="coverageItem"><strong>${pagePieces.length}</strong><span>この駒の動画</span></div>
   <div class="coverageItem"><strong>${vfxCount}</strong><span>VFX付き動作</span></div>
   <div class="coverageItem"><strong>${modelReviewCount}</strong><span>360°モデル確認</span></div>
-  <p>現行8駒すべてに360°ターンテーブルを追加。歩兵はUnity Animator State全15件、その他7駒は既存Blenderシーケンスを分割表示し、VFXなしの通常動作は${motionOnlyCount}件です。</p>`;
-const groups = ['すべて','基本','移動','攻撃','リアクション','特殊'];
-const filters = document.querySelector('#filters'); let activeGroup='すべて';
-for(const group of groups){const b=document.createElement('button');b.textContent=group;b.className=group===activeGroup?'active':'';b.onclick=()=>{activeGroup=group;[...filters.children].forEach(x=>x.classList.toggle('active',x===b));render()};filters.appendChild(b)}
-const pieceOrder=['歩兵','金','銀','桂','香','角','飛','王']; const root=document.querySelector('#gallery'); let playing=true; let speed=1;
-function render(){root.innerHTML='';const shown=activeGroup==='すべて'?pieces:pieces.filter(x=>x.group===activeGroup);const keyOf=x=>x.id.startsWith('pawn-')?'歩兵':x.piece;const grouped=shown.reduce((a,x)=>{const k=keyOf(x);(a[k]??=[]).push(x);return a},{});for(const piece of pieceOrder){const entries=grouped[piece];if(!entries?.length)continue;const section=document.createElement('section');section.className='pieceSection';const kanji=piece==='歩兵'?'歩':piece;const total=pieces.filter(x=>keyOf(x)===piece).length;section.innerHTML=`<div class="sectionHeading"><div><span class="pieceKanji">${kanji}</span><h2>${piece} — ${entries.length}アニメーション</h2></div><span>${entries.length} / ${total}</span></div><div class="grid"></div>`;const grid=section.querySelector('.grid');for(const item of entries){const tags=item.modelReview?'<span class="motionTag">MODEL 360°</span>':item.vfx.length?item.vfx.map(v=>`<span class="vfxTag">VFX · ${v}</span>`).join(''):'<span class="motionTag">MOTION ONLY</span>';const card=document.createElement('article');card.className='card';card.innerHTML=`<div class="media"><video muted loop autoplay playsinline preload="metadata" poster="media/${item.id}.jpg?v=${mediaRevision}"><source src="media/${item.id}.mp4?v=${mediaRevision}" type="video/mp4"></video><span class="duration">${item.duration}</span><button class="cardPlay" aria-label="再生/一時停止">Ⅱ</button></div><div class="info"><div class="titleRow"><div><div class="jp">${item.piece}・${item.jp}</div><div class="groupLabel">${item.group}</div></div><div class="tags">${tags}</div></div><div class="state"><span>STATE</span><code>${item.state}</code></div><p>${item.note}</p></div>`;const video=card.querySelector('video'),btn=card.querySelector('.cardPlay');video.playbackRate=speed;if(!playing)video.pause();btn.onclick=()=>{if(video.paused){video.play();btn.textContent='Ⅱ'}else{video.pause();btn.textContent='▶'}};grid.appendChild(card)}root.appendChild(section)}}
-render(); function videos(){return [...document.querySelectorAll('video')]} function setPlaying(next){playing=next;for(const v of videos()){if(playing){v.play().catch(()=>{})}else v.pause()}document.querySelector('#toggleAll').textContent=playing?'一時停止':'すべて再生'} document.querySelector('#toggleAll').onclick=()=>setPlaying(!playing); document.querySelectorAll('[data-speed]').forEach(b=>b.onclick=()=>{speed=Number(b.dataset.speed);videos().forEach(v=>v.playbackRate=speed);document.querySelectorAll('[data-speed]').forEach(x=>x.classList.toggle('active',x===b))});
+  <p>${route.label}だけを読み込む軽量ページです。他の駒の動画は読み込みません。VFXなしの通常動作は${motionOnlyCount}件です。</p>`;
+
+const groups = ['すべて', ...['基本','移動','攻撃','リアクション','特殊'].filter(group => pagePieces.some(x => x.group === group))];
+const filters = document.querySelector('#filters');
+let activeGroup='すべて';
+for(const group of groups){
+  const b=document.createElement('button');
+  b.textContent=group;
+  b.className=group===activeGroup?'active':'';
+  b.onclick=()=>{
+    activeGroup=group;
+    [...filters.children].forEach(x=>x.classList.toggle('active',x===b));
+    render();
+  };
+  filters.appendChild(b);
+}
+
+const root=document.querySelector('#gallery');
+let playing=true;
+let speed=1;
+function render(){
+  root.innerHTML='';
+  const entries=activeGroup==='すべて'?pagePieces:pagePieces.filter(x=>x.group===activeGroup);
+  const section=document.createElement('section');
+  section.className='pieceSection';
+  section.innerHTML=`<div class="sectionHeading"><div><span class="pieceKanji">${route.kanji}</span><h2>${route.label} — ${entries.length}アニメーション</h2></div><span>${entries.length} / ${pagePieces.length}</span></div><div class="grid"></div>`;
+  const grid=section.querySelector('.grid');
+  for(const item of entries){
+    const tags=item.modelReview?'<span class="motionTag">MODEL 360°</span>':item.vfx.length?item.vfx.map(v=>`<span class="vfxTag">VFX · ${v}</span>`).join(''):'<span class="motionTag">MOTION ONLY</span>';
+    const card=document.createElement('article');
+    card.className='card';
+    card.innerHTML=`<div class="media"><video muted loop autoplay playsinline preload="metadata" poster="${mediaBase}${item.id}.jpg?v=${mediaRevision}"><source src="${mediaBase}${item.id}.mp4?v=${mediaRevision}" type="video/mp4"></video><span class="duration">${item.duration}</span><button class="cardPlay" aria-label="再生/一時停止">Ⅱ</button></div><div class="info"><div class="titleRow"><div><div class="jp">${item.piece}・${item.jp}</div><div class="groupLabel">${item.group}</div></div><div class="tags">${tags}</div></div><div class="state"><span>STATE</span><code>${item.state}</code></div><p>${item.note}</p></div>`;
+    const video=card.querySelector('video'),btn=card.querySelector('.cardPlay');
+    video.playbackRate=speed;
+    if(!playing) video.pause();
+    btn.onclick=()=>{if(video.paused){video.play();btn.textContent='Ⅱ'}else{video.pause();btn.textContent='▶'}};
+    grid.appendChild(card);
+  }
+  root.appendChild(section);
+}
+render();
+function videos(){return [...document.querySelectorAll('video')]}
+function setPlaying(next){
+  playing=next;
+  for(const v of videos()){if(playing){v.play().catch(()=>{})}else v.pause()}
+  document.querySelector('#toggleAll').textContent=playing?'一時停止':'すべて再生';
+}
+document.querySelector('#toggleAll').onclick=()=>setPlaying(!playing);
+document.querySelectorAll('[data-speed]').forEach(b=>b.onclick=()=>{
+  speed=Number(b.dataset.speed);
+  videos().forEach(v=>v.playbackRate=speed);
+  document.querySelectorAll('[data-speed]').forEach(x=>x.classList.toggle('active',x===b));
+});
