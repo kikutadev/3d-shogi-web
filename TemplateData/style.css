@@ -79,39 +79,3 @@ body {
   margin: 0;
   background: #a31f16;
 }
-#orientation-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 10000;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
-  background: #e7dfcf;
-  color: #16130f;
-  text-align: center;
-}
-.orientation-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif;
-}
-.orientation-card strong {
-  font-size: 26px;
-  font-weight: 600;
-}
-.orientation-card span {
-  width: 92px;
-  height: 4px;
-  margin: 14px 0 12px;
-  background: #a31f16;
-}
-.orientation-card small {
-  color: rgba(35, 29, 22, .62);
-  font: 500 13px/1.5 -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
-}
-@media (orientation: portrait) and (max-width: 900px) {
-  #orientation-overlay { display: flex; }
-}
