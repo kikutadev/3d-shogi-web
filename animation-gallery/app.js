@@ -1,4 +1,4 @@
-const mediaRevision = '20260906-silver-katana-v3';
+const mediaRevision = '20260906-silver-katana-v4';
 const pieces = [
   {
     "id": "pawn-turntable",
@@ -290,7 +290,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Gallery / Attack",
-    "note": "大きく上段へ起こし、前へ踏み込んで銀の正面を右上から左下へ深く斬り抜ける袈裟斬り",
+    "note": "刀を持つ側で大きく上段へ起こし、前へ踏み込み、胸前を横切って反対側の低い位置まで斬り下げる袈裟斬り",
     "duration": "2.3 sec",
     "vfx": [
       "KATANA SLASH",
