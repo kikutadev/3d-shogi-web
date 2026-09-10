@@ -4,16 +4,16 @@
 This distribution includes font software licensed under the SIL Open Font License, Version 1.1 (OFL-1.1).
 The full applicable license texts are included under licenses/fonts/ in the published WebGL distribution.
 
-1. Kaisei Tokumin
+1. Shippori Mincho
 -----------------
 Original font copyright:
-Copyright 2020 The Kaisei Project Authors (https://github.com/Font-Kai/Kaisei)
+Copyright 2021 The Shippori Mincho Project Authors (https://github.com/fontdasu/ShipporiMincho)
 
 License: SIL Open Font License, Version 1.1.
-Upstream project: https://github.com/Font-Kai/Kaisei
+Upstream project: https://github.com/fontdasu/ShipporiMincho
 
 3D Shogi redistributes a modified glyph subset for UI use. The redistributed derivative is named
-"Shogi Display Serif Medium". Modifications are limited to removing unused glyphs for player-build size
+"Shogi Display Serif SemiBold". Modifications are limited to removing unused glyphs for player-build size
 and changing font naming metadata for the redistributed derivative. The upstream source font remains
 unmodified in the development source tree. The derivative remains licensed under OFL-1.1.
 
