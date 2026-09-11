@@ -57,13 +57,13 @@
       var loaderUrl = buildUrl + "/webgl-build.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/webgl-build.data?v=1.0%2B26e943dc",
-        frameworkUrl: buildUrl + "/webgl-build.framework.js?v=1.0%2B26e943dc",
-        codeUrl: buildUrl + "/webgl-build.wasm?v=1.0%2B26e943dc",
+        dataUrl: buildUrl + "/webgl-build.data?v=1.0%2Be61a4a15",
+        frameworkUrl: buildUrl + "/webgl-build.framework.js?v=1.0%2Be61a4a15",
+        codeUrl: buildUrl + "/webgl-build.wasm?v=1.0%2Be61a4a15",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "kikutadev",
         productName: "3D Shogi",
-        productVersion: "1.0+26e943dc",
+        productVersion: "1.0+e61a4a15",
         showBanner: unityShowBanner,
         // errorHandler: function(err, url, line) {
         //    alert("error " + err + " occurred at line " + line);
@@ -119,6 +119,9 @@
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 document.querySelector("#unity-loading-bar").style.display = "none";
+                requestAnimationFrame(() => requestAnimationFrame(() => {
+                  unityInstance.SendMessage('GameplayRuntime', 'NotifyWebPlayerVisible');
+                }));
                 document.querySelector("#unity-fullscreen-button").onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
