@@ -1,0 +1,81 @@
+body { padding: 0; margin: 0 }
+#unity-container { position: absolute }
+#unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
+#unity-container.unity-mobile { position: fixed; width: 100%; height: 100% }
+#unity-canvas { background: #1F1F20 }
+.unity-mobile #unity-canvas { width: 100%; height: 100% }
+#unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
+#unity-logo { width: 154px; height: 130px; background: url('unity-logo-dark.png') no-repeat center }
+#unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; margin-left: 6.5px; background: url('progress-bar-empty-dark.png') no-repeat center }
+#unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('progress-bar-full-dark.png') no-repeat center }
+#unity-footer { position: relative }
+.unity-mobile #unity-footer { display: none }
+#unity-logo-title-footer { float:left; width: 102px; height: 38px; background: url('unity-logo-title-footer.png') no-repeat center }
+#unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
+#unity-fullscreen-button { cursor:pointer; float: right; width: 38px; height: 38px; background: url('fullscreen-button.png') no-repeat center }
+#unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#unity-container.unity-desktop {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+}
+#unity-container.unity-desktop #unity-canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+#unity-container.unity-desktop #unity-footer {
+  display: none;
+}
+#unity-canvas {
+  touch-action: none;
+  background: #e7dfcf;
+}
+body {
+  background: #e7dfcf;
+}
+#unity-loading-bar {
+  width: min(420px, 72vw);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+#unity-logo {
+  display: none !important;
+}
+#shogi-loading-mark {
+  margin-bottom: 10px;
+  color: #16130f;
+  font: 500 clamp(36px, 5vw, 62px)/1.15 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', serif;
+  letter-spacing: .04em;
+}
+#shogi-loading-copy {
+  margin-bottom: 22px;
+  color: rgba(35, 29, 22, .62);
+  font: 500 14px/1.5 -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+  letter-spacing: .08em;
+}
+#unity-progress-bar-empty {
+  width: 100%;
+  height: 4px;
+  margin: 0;
+  background: rgba(45, 35, 25, .14);
+  border: 0;
+}
+#unity-progress-bar-full {
+  height: 4px;
+  margin: 0;
+  background: #a31f16;
+}
