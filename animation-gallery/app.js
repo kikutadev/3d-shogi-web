@@ -1,4 +1,4 @@
-const mediaRevision = '20260906-silver-katana-v5';
+const mediaRevision = '20260918-visual-v3';
 const pieces = [
   {
     "id": "pawn-turntable",
@@ -118,7 +118,7 @@ const pieces = [
     "jp": "撃破",
     "state": "Base Layer / Defeated",
     "note": "撃破・ダウン",
-    "duration": "1.0 sec",
+    "duration": "0.8 sec",
     "vfx": []
   },
   {
@@ -138,10 +138,46 @@ const pieces = [
     "jp": "必殺",
     "state": "Base Layer / PawnSpecial",
     "note": "歩の専用前方攻撃",
-    "duration": "0.8 sec",
+    "duration": "0.9 sec",
     "vfx": [
       "CHARGE",
       "SPECIAL IMPACT"
+    ]
+  },
+  {
+    "id": "pawn-piercing-windup",
+    "piece": "歩",
+    "group": "特殊",
+    "jp": "穿陣・溜め",
+    "state": "Base Layer / PiercingWindup",
+    "note": "穿陣の溜め。槍を引き、全身を貫通突進へ圧縮する予備動作",
+    "duration": "0.8 sec",
+    "vfx": [
+      "PIERCING CHARGE"
+    ]
+  },
+  {
+    "id": "pawn-piercing-drive",
+    "piece": "歩",
+    "group": "特殊",
+    "jp": "穿陣・貫通",
+    "state": "Base Layer / PiercingDrive",
+    "note": "穿陣の貫通中。盤面上の移動量はGridMotorが所有し、Animatorは突進姿勢だけを担当",
+    "duration": "0.8 sec",
+    "vfx": [
+      "PIERCING PATH"
+    ]
+  },
+  {
+    "id": "pawn-piercing-recovery",
+    "piece": "歩",
+    "group": "特殊",
+    "jp": "穿陣・復帰",
+    "state": "Base Layer / PiercingRecovery",
+    "note": "貫通後の制動から槍を戻す復帰動作",
+    "duration": "0.8 sec",
+    "vfx": [
+      "PIERCING IMPACT"
     ]
   },
   {
@@ -175,7 +211,7 @@ const pieces = [
     "jp": "薙ぎ払い",
     "state": "Base Layer / ToSpecial",
     "note": "「と」状態の大振り攻撃",
-    "duration": "1.0 sec",
+    "duration": "0.9 sec",
     "vfx": [
       "TO SWEEP"
     ]
@@ -196,7 +232,7 @@ const pieces = [
     "piece": "金",
     "group": "基本",
     "jp": "待機",
-    "state": "Gallery / Idle",
+    "state": "Production / Idle",
     "note": "両足を接地したまま膝を緩め、重心を静かに移す重装待機",
     "duration": "1.2 sec",
     "vfx": []
@@ -206,7 +242,7 @@ const pieces = [
     "piece": "金",
     "group": "移動",
     "jp": "移動",
-    "state": "Gallery / Move",
+    "state": "Production / Move",
     "note": "短い歩幅で支持脚を切り替え、着地ごとに沈む重い足運び",
     "duration": "1.0 sec",
     "vfx": []
@@ -216,7 +252,7 @@ const pieces = [
     "piece": "金",
     "group": "攻撃",
     "jp": "攻撃",
-    "state": "Gallery / Attack",
+    "state": "Production / Attack",
     "note": "後脚で溜め、前脚を着いて全身で押し込む重い杖打撃",
     "duration": "2.3 sec",
     "vfx": [
@@ -228,9 +264,9 @@ const pieces = [
     "piece": "金",
     "group": "リアクション",
     "jp": "被弾",
-    "state": "Gallery / Hit",
+    "state": "Production / Hit",
     "note": "両膝を潰して衝撃を受け、足元で踏ん張って戻る被弾",
-    "duration": "0.5 sec",
+    "duration": "0.6 sec",
     "vfx": []
   },
   {
@@ -238,7 +274,7 @@ const pieces = [
     "piece": "金",
     "group": "リアクション",
     "jp": "撃破",
-    "state": "Gallery / Defeated",
+    "state": "Production / Defeated",
     "note": "一度耐えてから片膝が抜け、重く横へ崩れ落ちる",
     "duration": "0.7 sec",
     "vfx": []
@@ -248,7 +284,7 @@ const pieces = [
     "piece": "金",
     "group": "リアクション",
     "jp": "復帰",
-    "state": "Gallery / Revive",
+    "state": "Production / Revive",
     "note": "片膝を立て、杖側で支えながら踏ん張って起き上がる",
     "duration": "1.1 sec",
     "vfx": []
@@ -269,7 +305,7 @@ const pieces = [
     "piece": "銀",
     "group": "基本",
     "jp": "待機",
-    "state": "Gallery / Idle",
+    "state": "Production / Idle",
     "note": "刀を身体の近くで立て、前傾を保つ警戒姿勢",
     "duration": "1.2 sec",
     "vfx": []
@@ -279,7 +315,7 @@ const pieces = [
     "piece": "銀",
     "group": "移動",
     "jp": "移動",
-    "state": "Gallery / Move",
+    "state": "Production / Move",
     "note": "支持脚と遊脚を交互に切り替え、刀を身体の近くで制御した軽快な戦闘歩法",
     "duration": "1.0 sec",
     "vfx": []
@@ -289,7 +325,7 @@ const pieces = [
     "piece": "銀",
     "group": "攻撃",
     "jp": "攻撃",
-    "state": "Gallery / Attack",
+    "state": "Production / Attack",
     "note": "刀を持つ側の高い構えから足・腰・肩の順に踏み込み、銀の正面を大きく横切って反対側の低い位置まで斬り抜ける袈裟斬り",
     "duration": "2.3 sec",
     "vfx": [
@@ -302,9 +338,9 @@ const pieces = [
     "piece": "銀",
     "group": "リアクション",
     "jp": "被弾",
-    "state": "Gallery / Hit",
+    "state": "Production / Hit",
     "note": "片足で衝撃を逃がしながら頭と刀腕が外へ流れ、すぐ構えへ戻る被弾",
-    "duration": "0.5 sec",
+    "duration": "0.6 sec",
     "vfx": []
   },
   {
@@ -312,7 +348,7 @@ const pieces = [
     "piece": "銀",
     "group": "リアクション",
     "jp": "撃破",
-    "state": "Gallery / Defeated",
+    "state": "Production / Defeated",
     "note": "支持脚が崩れ、両脚が絡みながら刀を身体の外へ逃がして横倒れする",
     "duration": "0.7 sec",
     "vfx": []
@@ -322,7 +358,7 @@ const pieces = [
     "piece": "銀",
     "group": "リアクション",
     "jp": "復帰",
-    "state": "Gallery / Revive",
+    "state": "Production / Revive",
     "note": "片足を着いて身体を起こし、刀を制御したまま素早く構えへ戻る",
     "duration": "1.1 sec",
     "vfx": []
@@ -343,7 +379,7 @@ const pieces = [
     "piece": "桂",
     "group": "基本",
     "jp": "待機",
-    "state": "Gallery / Idle",
+    "state": "Production / Idle",
     "note": "静止時の呼吸・浮遊・姿勢保持",
     "duration": "1.2 sec",
     "vfx": []
@@ -353,7 +389,7 @@ const pieces = [
     "piece": "桂",
     "group": "移動",
     "jp": "移動",
-    "state": "Gallery / Move",
+    "state": "Production / Move",
     "note": "各駒固有の移動サンプル",
     "duration": "1.0 sec",
     "vfx": []
@@ -363,7 +399,7 @@ const pieces = [
     "piece": "桂",
     "group": "攻撃",
     "jp": "攻撃",
-    "state": "Gallery / Attack",
+    "state": "Production / Attack",
     "note": "深く沈んで跳躍し、前脚から着地",
     "duration": "2.3 sec",
     "vfx": [
@@ -375,9 +411,9 @@ const pieces = [
     "piece": "桂",
     "group": "リアクション",
     "jp": "被弾",
-    "state": "Gallery / Hit",
+    "state": "Production / Hit",
     "note": "被弾時の短いリアクション",
-    "duration": "0.5 sec",
+    "duration": "0.6 sec",
     "vfx": []
   },
   {
@@ -385,7 +421,7 @@ const pieces = [
     "piece": "桂",
     "group": "リアクション",
     "jp": "撃破",
-    "state": "Gallery / Defeated",
+    "state": "Production / Defeated",
     "note": "馬体が横へ倒れ込む撃破モーション",
     "duration": "0.7 sec",
     "vfx": []
@@ -395,7 +431,7 @@ const pieces = [
     "piece": "桂",
     "group": "リアクション",
     "jp": "復帰",
-    "state": "Gallery / Revive",
+    "state": "Production / Revive",
     "note": "横倒れから四脚を戻して立ち上がる",
     "duration": "1.1 sec",
     "vfx": []
@@ -416,7 +452,7 @@ const pieces = [
     "piece": "香",
     "group": "基本",
     "jp": "待機",
-    "state": "Gallery / Idle",
+    "state": "Production / Idle",
     "note": "静止時の呼吸・浮遊・姿勢保持",
     "duration": "1.2 sec",
     "vfx": []
@@ -426,7 +462,7 @@ const pieces = [
     "piece": "香",
     "group": "移動",
     "jp": "移動",
-    "state": "Gallery / Move",
+    "state": "Production / Move",
     "note": "各駒固有の移動サンプル",
     "duration": "1.0 sec",
     "vfx": []
@@ -436,7 +472,7 @@ const pieces = [
     "piece": "香",
     "group": "攻撃",
     "jp": "攻撃",
-    "state": "Gallery / Attack",
+    "state": "Production / Attack",
     "note": "逆転プリロードから一直線に突進",
     "duration": "2.3 sec",
     "vfx": [
@@ -449,9 +485,9 @@ const pieces = [
     "piece": "香",
     "group": "リアクション",
     "jp": "被弾",
-    "state": "Gallery / Hit",
+    "state": "Production / Hit",
     "note": "被弾時の短いリアクション",
-    "duration": "0.5 sec",
+    "duration": "0.6 sec",
     "vfx": []
   },
   {
@@ -459,7 +495,7 @@ const pieces = [
     "piece": "香",
     "group": "リアクション",
     "jp": "撃破",
-    "state": "Gallery / Defeated",
+    "state": "Production / Defeated",
     "note": "車体が横転して停止",
     "duration": "0.7 sec",
     "vfx": []
@@ -469,7 +505,7 @@ const pieces = [
     "piece": "香",
     "group": "リアクション",
     "jp": "復帰",
-    "state": "Gallery / Revive",
+    "state": "Production / Revive",
     "note": "横転状態から二段階で起き上がる",
     "duration": "1.1 sec",
     "vfx": []
@@ -490,7 +526,7 @@ const pieces = [
     "piece": "角",
     "group": "基本",
     "jp": "待機",
-    "state": "Gallery / Idle",
+    "state": "Production / Idle",
     "note": "静止時の呼吸・浮遊・姿勢保持",
     "duration": "1.2 sec",
     "vfx": []
@@ -500,7 +536,7 @@ const pieces = [
     "piece": "角",
     "group": "移動",
     "jp": "移動",
-    "state": "Gallery / Move",
+    "state": "Production / Move",
     "note": "各駒固有の移動サンプル",
     "duration": "1.0 sec",
     "vfx": []
@@ -510,7 +546,7 @@ const pieces = [
     "piece": "角",
     "group": "攻撃",
     "jp": "攻撃",
-    "state": "Gallery / Attack",
+    "state": "Production / Attack",
     "note": "X形を収束して対角線へ放出",
     "duration": "2.3 sec",
     "vfx": [
@@ -523,9 +559,9 @@ const pieces = [
     "piece": "角",
     "group": "リアクション",
     "jp": "被弾",
-    "state": "Gallery / Hit",
+    "state": "Production / Hit",
     "note": "被弾時の短いリアクション",
-    "duration": "0.5 sec",
+    "duration": "0.6 sec",
     "vfx": []
   },
   {
@@ -533,7 +569,7 @@ const pieces = [
     "piece": "角",
     "group": "リアクション",
     "jp": "撃破",
-    "state": "Gallery / Defeated",
+    "state": "Production / Defeated",
     "note": "4Finを畳みX構造を崩して機能停止",
     "duration": "0.7 sec",
     "vfx": []
@@ -543,7 +579,7 @@ const pieces = [
     "piece": "角",
     "group": "リアクション",
     "jp": "復帰",
-    "state": "Gallery / Revive",
+    "state": "Production / Revive",
     "note": "対角ペアを順に展開してXを再構成",
     "duration": "1.1 sec",
     "vfx": []
@@ -564,7 +600,7 @@ const pieces = [
     "piece": "飛",
     "group": "基本",
     "jp": "待機",
-    "state": "Gallery / Idle",
+    "state": "Production / Idle",
     "note": "静止時の呼吸・浮遊・姿勢保持",
     "duration": "1.2 sec",
     "vfx": []
@@ -574,7 +610,7 @@ const pieces = [
     "piece": "飛",
     "group": "移動",
     "jp": "移動",
-    "state": "Gallery / Move",
+    "state": "Production / Move",
     "note": "各駒固有の移動サンプル",
     "duration": "1.0 sec",
     "vfx": []
@@ -584,7 +620,7 @@ const pieces = [
     "piece": "飛",
     "group": "攻撃",
     "jp": "攻撃",
-    "state": "Gallery / Attack",
+    "state": "Production / Attack",
     "note": "スラスターを溜め、砲撃反動へ",
     "duration": "2.3 sec",
     "vfx": [
@@ -596,9 +632,9 @@ const pieces = [
     "piece": "飛",
     "group": "リアクション",
     "jp": "被弾",
-    "state": "Gallery / Hit",
+    "state": "Production / Hit",
     "note": "被弾時の短いリアクション",
-    "duration": "0.5 sec",
+    "duration": "0.6 sec",
     "vfx": []
   },
   {
@@ -606,7 +642,7 @@ const pieces = [
     "piece": "飛",
     "group": "リアクション",
     "jp": "撃破",
-    "state": "Gallery / Defeated",
+    "state": "Production / Defeated",
     "note": "推力を失い片側へ傾いて機首が沈む",
     "duration": "0.7 sec",
     "vfx": []
@@ -616,7 +652,7 @@ const pieces = [
     "piece": "飛",
     "group": "リアクション",
     "jp": "復帰",
-    "state": "Gallery / Revive",
+    "state": "Production / Revive",
     "note": "低い側のスラスターから再点火して水平復帰",
     "duration": "1.1 sec",
     "vfx": []
@@ -637,7 +673,7 @@ const pieces = [
     "piece": "王",
     "group": "基本",
     "jp": "待機",
-    "state": "Gallery / Idle",
+    "state": "Production / Idle",
     "note": "静止時の呼吸・浮遊・姿勢保持",
     "duration": "1.2 sec",
     "vfx": []
@@ -647,7 +683,7 @@ const pieces = [
     "piece": "王",
     "group": "移動",
     "jp": "移動",
-    "state": "Gallery / Move",
+    "state": "Production / Move",
     "note": "各駒固有の移動サンプル",
     "duration": "1.0 sec",
     "vfx": []
@@ -657,7 +693,7 @@ const pieces = [
     "piece": "王",
     "group": "攻撃",
     "jp": "攻撃",
-    "state": "Gallery / Attack",
+    "state": "Production / Attack",
     "note": "大きく予兆して杖を薙ぎ払う",
     "duration": "2.3 sec",
     "vfx": [
@@ -669,9 +705,9 @@ const pieces = [
     "piece": "王",
     "group": "リアクション",
     "jp": "被弾",
-    "state": "Gallery / Hit",
+    "state": "Production / Hit",
     "note": "杖で踏ん張り、遅れてマントが揺れる被弾",
-    "duration": "0.5 sec",
+    "duration": "0.6 sec",
     "vfx": []
   },
   {
@@ -679,7 +715,7 @@ const pieces = [
     "piece": "王",
     "group": "リアクション",
     "jp": "撃破",
-    "state": "Gallery / Defeated",
+    "state": "Production / Defeated",
     "note": "撃破時の倒れ・沈み込み",
     "duration": "0.7 sec",
     "vfx": []
@@ -689,7 +725,7 @@ const pieces = [
     "piece": "王",
     "group": "リアクション",
     "jp": "復帰",
-    "state": "Gallery / Revive",
+    "state": "Production / Revive",
     "note": "撃破状態からの立ち上がり・再起動",
     "duration": "1.1 sec",
     "vfx": []
@@ -699,9 +735,9 @@ const pieces = [
     "piece": "王",
     "group": "特殊",
     "jp": "大技",
-    "state": "Gallery / Royal Slam",
-    "note": "長い二段階予兆から全身で叩き下ろす王専用大技",
-    "duration": "5.0 sec",
+    "state": "Production / BossAttack",
+    "note": "Production大技。警告姿勢を保持し、全身を沈めて杖を叩き付け、長い隙を伴って復帰する",
+    "duration": "2.6 sec",
     "vfx": [
       "WARNING RINGS",
       "SHOCKWAVE"
