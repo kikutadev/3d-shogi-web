@@ -1,4 +1,4 @@
-const mediaRevision = '20260919-visual-v5';
+const mediaRevision = '20260920-state-v6';
 const pieces = [
   {
     "id": "pawn-turntable",
@@ -105,7 +105,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Base Layer / Hit",
-    "note": "被弾リアクション",
+    "note": "短い接触sparkを伴う被弾。身体のリアクションを主役にした軽い二次演出",
     "duration": "0.8 sec",
     "vfx": [
       "HIT IMPACT"
@@ -117,7 +117,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Base Layer / Defeated",
-    "note": "撃破・ダウン",
+    "note": "倒れた身体の接地に低い盤面dustを重ねる撃破",
     "duration": "0.8 sec",
     "vfx": []
   },
@@ -127,7 +127,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Base Layer / Revive",
-    "note": "撃破状態からの復帰",
+    "note": "味方化演出を邪魔しない小さな立ち上がりring",
     "duration": "0.8 sec",
     "vfx": []
   },
@@ -265,7 +265,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "両膝を潰して衝撃を受け、足元で踏ん張って戻る被弾",
+    "note": "低いringで重量を受け止める被弾",
     "duration": "0.6 sec",
     "vfx": []
   },
@@ -275,7 +275,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "一度耐えてから片膝が抜け、重く横へ崩れ落ちる",
+    "note": "膝から潰れる重い崩れと盤面crackを伴う撃破",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -285,7 +285,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Production / Revive",
-    "note": "片膝を立て、杖側で支えながら踏ん張って起き上がる",
+    "note": "低いringから重心を押し戻す復帰",
     "duration": "1.1 sec",
     "vfx": []
   },
@@ -339,7 +339,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "片足で衝撃を逃がしながら頭と刀腕が外へ流れ、すぐ構えへ戻る被弾",
+    "note": "細いblade glintが交差する、剣士らしい素早い被弾",
     "duration": "0.6 sec",
     "vfx": []
   },
@@ -349,7 +349,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "支持脚が崩れ、両脚が絡みながら刀を身体の外へ逃がして横倒れする",
+    "note": "脚から崩れる横倒しにblade glintと細い盤面cutが残る撃破",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -359,7 +359,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Production / Revive",
-    "note": "片足を着いて身体を起こし、刀を制御したまま素早く構えへ戻る",
+    "note": "立ち上がりに細い刀身glintを重ねる復帰",
     "duration": "1.1 sec",
     "vfx": []
   },
@@ -412,7 +412,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "被弾時の短いリアクション",
+    "note": "蹄元のdust fanで支持替えを強調する被弾",
     "duration": "0.6 sec",
     "vfx": []
   },
@@ -422,7 +422,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "馬体が横へ倒れ込む撃破モーション",
+    "note": "木馬の横倒しとlateral slide dustを組み合わせた撃破",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -432,7 +432,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Production / Revive",
-    "note": "横倒れから四脚を戻して立ち上がる",
+    "note": "左右の蹄接地を小さく見せる復帰",
     "duration": "1.1 sec",
     "vfx": []
   },
@@ -486,7 +486,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "被弾時の短いリアクション",
+    "note": "前輪／軸周辺に短いsparkが走る被弾",
     "duration": "0.6 sec",
     "vfx": []
   },
@@ -496,7 +496,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "車体が横転して停止",
+    "note": "車体の横倒しと左右wheel skidを強調する撃破",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -506,7 +506,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Production / Revive",
-    "note": "横転状態から二段階で起き上がる",
+    "note": "左右の車輪軸が再び立ち上がる短いspark",
     "duration": "1.1 sec",
     "vfx": []
   },
@@ -560,7 +560,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "被弾時の短いリアクション",
+    "note": "core ringと4本の対角線が内側へ寄る被弾",
     "duration": "0.6 sec",
     "vfx": []
   },
@@ -570,7 +570,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "4Finを畳みX構造を崩して機能停止",
+    "note": "X機構が中心へ折り畳まれ、core ringが潰れる構造崩壊",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -580,7 +580,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Production / Revive",
-    "note": "対角ペアを順に展開してXを再構成",
+    "note": "対角線の機構が外へ再展開する復帰",
     "duration": "1.1 sec",
     "vfx": []
   },
@@ -633,7 +633,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "被弾時の短いリアクション",
+    "note": "左右thrusterが一瞬sputterする被弾",
     "duration": "0.6 sec",
     "vfx": []
   },
@@ -643,7 +643,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "推力を失い片側へ傾いて機首が沈む",
+    "note": "推進器が失速しlift-loss ringと後方排気を残して落ちる撃破",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -653,7 +653,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Production / Revive",
-    "note": "低い側のスラスターから再点火して水平復帰",
+    "note": "左右thrusterが再点火して浮力を取り戻す復帰",
     "duration": "1.1 sec",
     "vfx": []
   },
@@ -706,7 +706,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "杖で踏ん張り、遅れてマントが揺れる被弾",
+    "note": "王冠付近のguard ringで威圧感を崩さない被弾",
     "duration": "0.6 sec",
     "vfx": []
   },
@@ -716,7 +716,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "撃破時の倒れ・沈み込み",
+    "note": "二重ringと八方向のbroken royal sealで通常駒と区別した最終撃破",
     "duration": "0.7 sec",
     "vfx": []
   },
