@@ -1,4 +1,4 @@
-const mediaRevision = '20260918-visual-v3';
+const mediaRevision = '20260919-visual-v4';
 const pieces = [
   {
     "id": "pawn-turntable",
@@ -380,7 +380,7 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Production / Idle",
-    "note": "静止時の呼吸・浮遊・姿勢保持",
+    "note": "頭・胸・臀部・尾が別位相で微動する、警戒した木馬の待機",
     "duration": "1.2 sec",
     "vfx": []
   },
@@ -453,7 +453,7 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Production / Idle",
-    "note": "静止時の呼吸・浮遊・姿勢保持",
+    "note": "衝撃受けと槍架台を見せた低い車体で、長槍がわずかに遅れて揺れる待機",
     "duration": "1.2 sec",
     "vfx": []
   },
@@ -463,7 +463,7 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Production / Move",
-    "note": "各駒固有の移動サンプル",
+    "note": "4輪の転動に対して長槍が遅れて追従する攻城槍車の移動",
     "duration": "1.0 sec",
     "vfx": []
   },
@@ -527,7 +527,7 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Production / Idle",
-    "note": "静止時の呼吸・浮遊・姿勢保持",
+    "note": "中央機構と4本の対角アームが別位相で微動し、X字の構えを崩さない待機",
     "duration": "1.2 sec",
     "vfx": []
   },
@@ -537,7 +537,7 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Production / Move",
-    "note": "各駒固有の移動サンプル",
+    "note": "対角アームが姿勢補正しながらX字を保つ浮遊移動",
     "duration": "1.0 sec",
     "vfx": []
   },
@@ -601,7 +601,7 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Production / Idle",
-    "note": "静止時の呼吸・浮遊・姿勢保持",
+    "note": "4基の推進器が姿勢を微補正し、主砲が船体に遅れて追従する浮遊待機",
     "duration": "1.2 sec",
     "vfx": []
   },
@@ -611,7 +611,7 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Production / Move",
-    "note": "各駒固有の移動サンプル",
+    "note": "推進器を個別にベクトル制御しながら主砲を安定させる移動",
     "duration": "1.0 sec",
     "vfx": []
   },
@@ -674,7 +674,7 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Production / Idle",
-    "note": "静止時の呼吸・浮遊・姿勢保持",
+    "note": "上体をほぼ崩さず、杖とマントだけが遅れて追従する王専用の静かな待機",
     "duration": "1.2 sec",
     "vfx": []
   },
@@ -684,7 +684,7 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Production / Move",
-    "note": "各駒固有の移動サンプル",
+    "note": "短い儀礼歩行で重心を運び、杖とマントが一拍遅れて収束する王専用移動",
     "duration": "1.0 sec",
     "vfx": []
   },
