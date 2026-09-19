@@ -1,4 +1,4 @@
-const mediaRevision = '20260919-visual-v4';
+const mediaRevision = '20260919-surface-impact-v5';
 const pieces = [
   {
     "id": "pawn-turntable",
@@ -473,7 +473,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Production / Attack",
-    "note": "逆転プリロードから一直線に突進",
+    "note": "槍を引き絞って車体ごと突進し、接触点から前方衝撃と盤面の扇状粉塵を出す攻城突撃",
     "duration": "2.3 sec",
     "vfx": [
       "CHARGE IMPACT",
@@ -547,7 +547,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Production / Attack",
-    "note": "X形を収束して対角線へ放出",
+    "note": "中央機構の収束から4方向を同時解放し、各対角rayの終端に短い切断痕を残すX字攻撃",
     "duration": "2.3 sec",
     "vfx": [
       "DIAGONAL BURST",
@@ -621,7 +621,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Production / Attack",
-    "note": "スラスターを溜め、砲撃反動へ",
+    "note": "砲口フラッシュから太い貫通圧力波を放ち、船体反動・後方噴射・終端圧力まで一続きに見せる砲撃",
     "duration": "2.3 sec",
     "vfx": [
       "MUZZLE BLAST"
