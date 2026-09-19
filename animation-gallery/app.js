@@ -1,4 +1,4 @@
-const mediaRevision = '20260919-surface-impact-v5';
+const mediaRevision = '20260919-visual-v5';
 const pieces = [
   {
     "id": "pawn-turntable",
@@ -473,7 +473,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Production / Attack",
-    "note": "槍を引き絞って車体ごと突進し、接触点から前方衝撃と盤面の扇状粉塵を出す攻城突撃",
+    "note": "長槍の衝突と同時に盤面へ扇状の衝撃・粉塵が流れる攻城槍車の突撃",
     "duration": "2.3 sec",
     "vfx": [
       "CHARGE IMPACT",
@@ -547,7 +547,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Production / Attack",
-    "note": "中央機構の収束から4方向を同時解放し、各対角rayの終端に短い切断痕を残すX字攻撃",
+    "note": "中心機構の解放から同時X字放射、各対角線の終端cutまでを一続きで表示",
     "duration": "2.3 sec",
     "vfx": [
       "DIAGONAL BURST",
@@ -621,7 +621,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Production / Attack",
-    "note": "砲口フラッシュから太い貫通圧力波を放ち、船体反動・後方噴射・終端圧力まで一続きに見せる砲撃",
+    "note": "砲口flash、太い圧力波、後方排気、終端pressureまでを伴う貫通砲撃",
     "duration": "2.3 sec",
     "vfx": [
       "MUZZLE BLAST"
