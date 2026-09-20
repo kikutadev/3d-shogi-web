@@ -1,4 +1,4 @@
-const mediaRevision = '20260920-king-v7';
+const mediaRevision = '20260920-king-v8';
 const pieces = [
   {
     "id": "pawn-turntable",
@@ -684,7 +684,7 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Production / Move",
-    "note": "短い儀礼歩行で重心を運び、上体を崩さず杖とマントが遅れて収束する",
+    "note": "短い儀礼歩行のまま足を盤面から明確に離し、接地後に胴体→杖→マントが遅れて荷重を受ける",
     "duration": "1.0 sec",
     "vfx": []
   },
@@ -706,7 +706,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "杖の後ろで受け、頭と王冠を崩さずマントだけが遅れて揺れる被弾",
+    "note": "杖側の膝と杖で衝撃を止め、頭と王冠は崩さず、重いマントだけが遅れて大きく振られる被弾",
     "duration": "0.6 sec",
     "vfx": []
   },
@@ -716,7 +716,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "膝→杖→頭／王冠→マント→broken royal sealの順で崩れる最終撃破",
+    "note": "膝→杖→頭／王冠→マントの順で崩れ、broken royal sealは接地付近まで遅れて現れる最終撃破",
     "duration": "0.8 sec",
     "vfx": []
   },
