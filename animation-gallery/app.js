@@ -1,4 +1,4 @@
-const mediaRevision = '20260920-state-v6';
+const mediaRevision = '20260920-king-v7';
 const pieces = [
   {
     "id": "pawn-turntable",
@@ -663,7 +663,7 @@ const pieces = [
     "group": "基本",
     "jp": "360°回転",
     "state": "Model / Turntable",
-    "note": "モデル全周を一定速度で確認する360°ターンテーブル",
+    "note": "王冠のinner cap・peak gem、立体王笏、肩から吊られたcape構造まで全周確認",
     "duration": "6.0 sec",
     "vfx": [],
     "modelReview": true
@@ -674,8 +674,8 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Production / Idle",
-    "note": "上体をほぼ崩さず、杖とマントだけが遅れて追従する王専用の静かな待機",
-    "duration": "1.2 sec",
+    "note": "長い静止から視線、杖、マントの順に遅れて動く王専用8秒Idle。常時bobしない",
+    "duration": "8.1 sec",
     "vfx": []
   },
   {
@@ -684,7 +684,7 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Production / Move",
-    "note": "短い儀礼歩行で重心を運び、杖とマントが一拍遅れて収束する王専用移動",
+    "note": "短い儀礼歩行で重心を運び、上体を崩さず杖とマントが遅れて収束する",
     "duration": "1.0 sec",
     "vfx": []
   },
@@ -694,7 +694,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Production / Attack",
-    "note": "大きく予兆して杖を薙ぎ払う",
+    "note": "脚に溜めた荷重を骨盤・胸・肩・杖へ流し、全周を薙いだ後にマントが遅れて戻る",
     "duration": "2.3 sec",
     "vfx": [
       "ROYAL IMPACT"
@@ -706,7 +706,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "王冠付近のguard ringで威圧感を崩さない被弾",
+    "note": "杖の後ろで受け、頭と王冠を崩さずマントだけが遅れて揺れる被弾",
     "duration": "0.6 sec",
     "vfx": []
   },
@@ -716,8 +716,8 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "二重ringと八方向のbroken royal sealで通常駒と区別した最終撃破",
-    "duration": "0.7 sec",
+    "note": "膝→杖→頭／王冠→マント→broken royal sealの順で崩れる最終撃破",
+    "duration": "0.8 sec",
     "vfx": []
   },
   {
@@ -726,7 +726,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Production / Revive",
-    "note": "撃破状態からの立ち上がり・再起動",
+    "note": "Gallery確認用。マントを逃がし杖を立て、膝を伸ばして戻る復帰。実戦では王は味方化しない",
     "duration": "1.1 sec",
     "vfx": []
   },
@@ -736,7 +736,7 @@ const pieces = [
     "group": "特殊",
     "jp": "大技",
     "state": "Production / BossAttack",
-    "note": "Production大技。警告姿勢を保持し、全身を沈めて杖を叩き付け、長い隙を伴って復帰する",
+    "note": "長い静止溜めで両脚へ圧縮を蓄え、全身を一気に解放して杖を叩き付ける王の円相",
     "duration": "2.6 sec",
     "vfx": [
       "WARNING RINGS",
