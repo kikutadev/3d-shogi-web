@@ -1,4 +1,4 @@
-const mediaRevision = '20260920-king-v8';
+const mediaRevision = '20260920-rook-v9';
 const pieces = [
   {
     "id": "pawn-turntable",
@@ -590,7 +590,7 @@ const pieces = [
     "group": "基本",
     "jp": "360°回転",
     "state": "Model / Turntable",
-    "note": "モデル全周を一定速度で確認する360°ターンテーブル",
+    "note": "太くした主砲口、船体から分離した4基の推進器、大型rear finを全周確認",
     "duration": "6.0 sec",
     "vfx": [],
     "modelReview": true
@@ -601,8 +601,8 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Production / Idle",
-    "note": "4基の推進器が姿勢を微補正し、主砲が船体に遅れて追従する浮遊待機",
-    "duration": "1.2 sec",
+    "note": "船体をほぼ静止させ、4基の推進器→主砲が非同期に姿勢補正する6秒待機",
+    "duration": "6.1 sec",
     "vfx": []
   },
   {
@@ -611,8 +611,8 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Production / Move",
-    "note": "推進器を個別にベクトル制御しながら主砲を安定させる移動",
-    "duration": "1.0 sec",
+    "note": "rear pairで推進を作り、船体→front pairへ受け渡し、停止時は逆順に制動する移動",
+    "duration": "1.1 sec",
     "vfx": []
   },
   {
@@ -621,7 +621,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Production / Attack",
-    "note": "砲口flash、太い圧力波、後方排気、終端pressureまでを伴う貫通砲撃",
+    "note": "breech lock→砲身recoil→2f後に船体recoil→さらに遅れてthrusterが姿勢回復する貫通砲撃",
     "duration": "2.3 sec",
     "vfx": [
       "MUZZLE BLAST"
@@ -633,7 +633,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "左右thrusterが一瞬sputterする被弾",
+    "note": "front-left thruster失調→opposite rear counter-thrustで水平を取り戻す被弾",
     "duration": "0.6 sec",
     "vfx": []
   },
@@ -643,7 +643,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "推進器が失速しlift-loss ringと後方排気を残して落ちる撃破",
+    "note": "rear-right故障から補正失敗と連鎖停止を経て、砲身が沈みlift-lossへ至る撃破",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -653,8 +653,8 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Production / Revive",
-    "note": "左右thrusterが再点火して浮力を取り戻す復帰",
-    "duration": "1.1 sec",
+    "note": "一基ずつ再点火し、全4基のovershoot→砲塔lock→安定hoverへ戻る復帰",
+    "duration": "1.3 sec",
     "vfx": []
   },
   {
