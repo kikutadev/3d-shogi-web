@@ -1,4 +1,4 @@
-const mediaRevision = '20260920-rook-v9';
+const mediaRevision = '20260921-bishop-v10';
 const pieces = [
   {
     "id": "pawn-turntable",
@@ -516,7 +516,7 @@ const pieces = [
     "group": "基本",
     "jp": "360°回転",
     "state": "Model / Turntable",
-    "note": "モデル全周を一定速度で確認する360°ターンテーブル",
+    "note": "固定Root joint、inner arm、outer blade、CoreUpperまで分離した2関節X機構を全周確認",
     "duration": "6.0 sec",
     "vfx": [],
     "modelReview": true
@@ -527,8 +527,8 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Production / Idle",
-    "note": "中央機構と4本の対角アームが別位相で微動し、X字の構えを崩さない待機",
-    "duration": "1.2 sec",
+    "note": "長い静止からCoreUpper、1対角pair、反対pairの順に微調整する角専用5秒Idle",
+    "duration": "5.1 sec",
     "vfx": []
   },
   {
@@ -537,8 +537,8 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Production / Move",
-    "note": "対角アームが姿勢補正しながらX字を保つ浮遊移動",
-    "duration": "1.0 sec",
+    "note": "Coreのbank後にinner arm、さらにouter bladeが遅れて追従し、X字を保ったまま浮遊する",
+    "duration": "1.1 sec",
     "vfx": []
   },
   {
@@ -547,7 +547,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Production / Attack",
-    "note": "中心機構の解放から同時X字放射、各対角線の終端cutまでを一続きで表示",
+    "note": "inner hinge→outer hingeの順に二段階で畳み、112fで4方向を同時解放。bladeだけが遅れてovershootする",
     "duration": "2.3 sec",
     "vfx": [
       "DIAGONAL BURST",
@@ -560,7 +560,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "core ringと4本の対角線が内側へ寄る被弾",
+    "note": "一方向のouter bladeが先に折れ、2f後に対角bladeが補正し、CoreUpperと残り2腕へ衝撃が伝わる",
     "duration": "0.6 sec",
     "vfx": []
   },
@@ -570,7 +570,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "X機構が中心へ折り畳まれ、core ringが潰れる構造崩壊",
+    "note": "outer blade→inner hinge→反対pair→Coreの順にX構造を失う段階的な機構崩壊",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -580,8 +580,8 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Production / Revive",
-    "note": "対角線の機構が外へ再展開する復帰",
-    "duration": "1.1 sec",
+    "note": "Core→inner hinge→一対角blade→反対対角blade→compass lockの順にX機構を再構築する",
+    "duration": "1.3 sec",
     "vfx": []
   },
   {
