@@ -453,8 +453,8 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Production / Idle",
-    "note": "衝撃受けと槍架台を見せた低い車体で、長槍がわずかに遅れて揺れる待機",
-    "duration": "1.2 sec",
+    "note": "約5秒の静かな待機。前足回り→車体→RamCarriage→槍の順に疎な荷重調整だけが入る",
+    "duration": "5.1 sec",
     "vfx": []
   },
   {
@@ -463,7 +463,7 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Production / Move",
-    "note": "4輪の転動に対して長槍が遅れて追従する攻城槍車の移動",
+    "note": "前後アクスルの上下が車体へ遅れて伝わり、RamCarriageと長槍がさらに追従する移動",
     "duration": "1.0 sec",
     "vfx": []
   },
@@ -473,7 +473,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Production / Attack",
-    "note": "長槍の衝突と同時に盤面へ扇状の衝撃・粉塵が流れる攻城槍車の突撃",
+    "note": "Rear preload→Front→RamCarriage→槍固定から突進し、衝突荷重が槍→前足→車体→後足へ伝わる",
     "duration": "2.3 sec",
     "vfx": [
       "CHARGE IMPACT",
@@ -486,7 +486,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "前輪／軸周辺に短いsparkが走る被弾",
+    "note": "front-left suspension failureの後にRamCarriageがずれ、rear-rightが遅れて補正する非対称被弾",
     "duration": "0.6 sec",
     "vfx": []
   },
@@ -496,8 +496,8 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "車体の横倒しと左右wheel skidを強調する撃破",
-    "duration": "0.7 sec",
+    "note": "片側suspension failureから槍架台が崩れ、遅れて車体全体が横倒れへ移る撃破",
+    "duration": "0.9 sec",
     "vfx": []
   },
   {
@@ -506,7 +506,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Production / Revive",
-    "note": "左右の車輪軸が再び立ち上がる短いspark",
+    "note": "Rear/Front axle→Body→RamCarriage→Spear lockの順に機構を再構築する復帰",
     "duration": "1.1 sec",
     "vfx": []
   },
