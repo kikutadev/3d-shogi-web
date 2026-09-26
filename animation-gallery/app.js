@@ -233,8 +233,8 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Production / Idle",
-    "note": "両足を接地したまま膝を緩め、重心を静かに移す重装待機",
-    "duration": "1.2 sec",
+    "note": "約4秒の静かな守備姿勢。膝→胴体→重い棍→頭の順に小さく荷重を調整する",
+    "duration": "4.1 sec",
     "vfx": []
   },
   {
@@ -243,8 +243,28 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Production / Move",
-    "note": "短い歩幅で支持脚を切り替え、着地ごとに沈む重い足運び",
+    "note": "片足を明確に持ち上げ、接地してから胴体が沈む重量級の足運び",
     "duration": "1.0 sec",
+    "vfx": []
+  },
+  {
+    "id": "gold-turn-left",
+    "piece": "金",
+    "group": "移動",
+    "jp": "左旋回",
+    "state": "Production / TurnLeft",
+    "note": "内足を上げ、盤面上の90°旋回へ胴体と棍が遅れて追従する金固有のSlow Turn",
+    "duration": "0.5 sec",
+    "vfx": []
+  },
+  {
+    "id": "gold-turn-right",
+    "piece": "金",
+    "group": "移動",
+    "jp": "右旋回",
+    "state": "Production / TurnRight",
+    "note": "即時に向きを変えず、踏み替え→胴体→頭→棍の順に収束する明確な弱点動作",
+    "duration": "0.5 sec",
     "vfx": []
   },
   {
@@ -253,7 +273,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Production / Attack",
-    "note": "後脚で溜め、前脚を着いて全身で押し込む重い杖打撃",
+    "note": "後脚と腰へ深く溜め、前方5セルだけを重い棍で薙ぐ高火力Front Five。後方3セルは死角",
     "duration": "2.3 sec",
     "vfx": [
       "HEAVY BASH"
@@ -265,7 +285,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "低いringで重量を受け止める被弾",
+    "note": "横へ逃げず、両膝と棍で衝撃を受け止める重量級の被弾",
     "duration": "0.6 sec",
     "vfx": []
   },
@@ -275,7 +295,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "膝から潰れる重い崩れと盤面crackを伴う撃破",
+    "note": "棍のbraceが崩れ、片膝→反対脚→胴体の順に重量を支えきれず倒れる撃破",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -285,8 +305,8 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Production / Revive",
-    "note": "低いringから重心を押し戻す復帰",
-    "duration": "1.1 sec",
+    "note": "棍を支えに膝と足を戻し、最後に胴体と頭を起こす重い復帰",
+    "duration": "1.3 sec",
     "vfx": []
   },
   {
