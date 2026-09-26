@@ -326,8 +326,8 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Production / Idle",
-    "note": "刀を身体の近くで立て、前傾を保つ警戒姿勢",
-    "duration": "1.2 sec",
+    "note": "約4秒の静かな警戒。支持脚の荷重→骨盤→頭・刀の順にわずかに収束し、長い静止区間を保つ",
+    "duration": "4.1 sec",
     "vfx": []
   },
   {
@@ -336,7 +336,7 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Production / Move",
-    "note": "支持脚と遊脚を交互に切り替え、刀を身体の近くで制御した軽快な戦闘歩法",
+    "note": "左右の遊脚を明確に持ち上げ、支持脚→骨盤→肩→刀が遅れて追従する軽快な戦闘歩法",
     "duration": "1.0 sec",
     "vfx": []
   },
@@ -346,7 +346,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Production / Attack",
-    "note": "刀を持つ側の高い構えから足・腰・肩の順に踏み込み、銀の正面を大きく横切って反対側の低い位置まで斬り抜ける袈裟斬り",
+    "note": "高い構えを保持し、前足接地→骨盤→胸→肩→刀の順に踏み込んで反対側の低い位置へ斬り抜け、残心から別経路で戻る袈裟斬り",
     "duration": "2.3 sec",
     "vfx": [
       "KATANA SLASH",
@@ -359,7 +359,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "細いblade glintが交差する、剣士らしい素早い被弾",
+    "note": "斜めへ一歩逃がして体幹で衝撃を受け、刀を遅れて残しながら反対足で素早く構え直す被弾",
     "duration": "0.6 sec",
     "vfx": []
   },
@@ -369,7 +369,7 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "脚から崩れる横倒しにblade glintと細い盤面cutが残る撃破",
+    "note": "支持脚の膝崩れから体幹が遅れて横へ倒れ、刀を手放さず短いside restへ入る撃破",
     "duration": "0.7 sec",
     "vfx": []
   },
@@ -379,8 +379,8 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Production / Revive",
-    "note": "立ち上がりに細い刀身glintを重ねる復帰",
-    "duration": "1.1 sec",
+    "note": "倒れた姿勢から足を先に接地し、骨盤→上体→刀の順に構えを再形成する復帰",
+    "duration": "1.3 sec",
     "vfx": []
   },
   {
