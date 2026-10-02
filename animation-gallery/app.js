@@ -400,8 +400,8 @@ const pieces = [
     "group": "基本",
     "jp": "待機",
     "state": "Production / Idle",
-    "note": "頭・胸・臀部・尾が別位相で微動する、警戒した木馬の待機",
-    "duration": "1.2 sec",
+    "note": "約4.7秒の長尺警戒。頭→胸→前蹄→臀部→尾が別位相で微調整し、長い静止区間を挟む",
+    "duration": "4.7 sec",
     "vfx": []
   },
   {
@@ -410,8 +410,8 @@ const pieces = [
     "group": "移動",
     "jp": "移動",
     "state": "Production / Move",
-    "note": "各駒固有の移動サンプル",
-    "duration": "1.0 sec",
+    "note": "対角の前後脚が交互に支持を替え、胸と臀部が逆位相、頭と尾が遅れて追従する四脚歩行",
+    "duration": "1.3 sec",
     "vfx": []
   },
   {
@@ -420,7 +420,7 @@ const pieces = [
     "group": "攻撃",
     "jp": "攻撃",
     "state": "Production / Attack",
-    "note": "深く沈んで跳躍し、前脚から着地",
+    "note": "後脚へ深く荷重して静止→蹴り出し→四脚を畳む→前脚接地→胸→後脚→臀部の二段着地",
     "duration": "2.3 sec",
     "vfx": [
       "LANDING RING"
@@ -432,8 +432,8 @@ const pieces = [
     "group": "リアクション",
     "jp": "被弾",
     "state": "Production / Hit",
-    "note": "蹄元のdust fanで支持替えを強調する被弾",
-    "duration": "0.6 sec",
+    "note": "前脚が横へ滑り、反対後脚で踏ん張ってから首と尾が遅れて振られ、反対前脚で安定する被弾",
+    "duration": "0.7 sec",
     "vfx": []
   },
   {
@@ -442,8 +442,8 @@ const pieces = [
     "group": "リアクション",
     "jp": "撃破",
     "state": "Production / Defeated",
-    "note": "木馬の横倒しとlateral slide dustを組み合わせた撃破",
-    "duration": "0.7 sec",
+    "note": "前脚→後脚の支持失敗から胴体が横へ崩れ、首と尾が遅れて床へ収束する撃破",
+    "duration": "1.1 sec",
     "vfx": []
   },
   {
@@ -452,8 +452,8 @@ const pieces = [
     "group": "リアクション",
     "jp": "復帰",
     "state": "Production / Revive",
-    "note": "左右の蹄接地を小さく見せる復帰",
-    "duration": "1.1 sec",
+    "note": "前脚→後脚の順に支持を作り、低い四脚姿勢から胴体を起こし、首と尾を最後に戻す復帰",
+    "duration": "1.7 sec",
     "vfx": []
   },
   {
